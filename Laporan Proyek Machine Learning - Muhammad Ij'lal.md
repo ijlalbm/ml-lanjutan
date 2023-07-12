@@ -1,6 +1,6 @@
 # Laporan Proyek _Machine Learning_ - Muhammad Ij'lal
 
-## Domain Proyek
+## _Domain_ Proyek
 
 Mobil saat ini merupakan kebutuhan pokok bagi sebagian masyarakat dalam menjalankan aktifitasnya. Mobil bekas salah satu pilihan yang tinggi peminatnya karena kondisi masih baik dan layak digunakan. 
 
@@ -91,9 +91,18 @@ Sebelum data diproses, maka dilakukan terkebih dahulu persiapan agar keluaran ya
 - Langkah kedua adalah membagi data menjadi data latih dan data uji. Persentasenya adalah 90% data latih dan 10% data uji.
 - Langkah _preprocessing_ selanjutnya adalah mengubah skala data agar memiliki performa yang lebih baik menggunakan fungsi _StandarScaler_ pada _library scikit-learn_.
   
-![iqryear](https://drive.google.com/uc?export=view&id=1UKvUKSUg3rfExz-JGZkzr5NbnkMrtztI)
+|       | year      | engineSize |
+|-------|-----------|------------|
+| count | 3090.0000 | 3090.0000  |
+| mean  | -0.0000   | 0.0000     |
+| std   | 1.0002    | 1.0002     |
+| min   | -3.7084   | -1.0746    |
+| 25%   | -0.9065   | -1.0746    |
+| 50%   | 0.0275    | 0.3024     |
+| 75%   | 0.9615    | 0.5778     |
+| max   | 1.8955    | 3.0563     |
 
-Dapat dilihat pada gambar diatas bahwa _mean_ menjadi 0 dan _std_ menjadi 1.
+Dapat dilihat pada tabel diatas bahwa _mean_ menjadi 0 dan _std_ menjadi 1.
 
 ## _Modeling_
 Setelah mendapatkan variabel yang mempengaruhi harga mobil bekas. Selanjutnya untuk mengetahui prediksi harga mobil, maka digunakan 3 algoritma berbeda yang akurasinya akan diukur menggunakan mse, lalu akan dipilih model terbaik dengan mse terkecil pada data latih dan data uji.
