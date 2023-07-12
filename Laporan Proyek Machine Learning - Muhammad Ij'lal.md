@@ -59,6 +59,7 @@ Rata-rata transmisi pada data adalah _manual_ dan _automatic_.
 
 Selanjutnya adalah menampilkan ringkasan data numerik.
 ![iqryear](https://drive.google.com/uc?export=view&id=1OUKqNOWwqtyPnynwg2EeA4KvP7RQG0Se)
+
 Pada variabel _price_ dapat dilihat bahwa mayoritas harga mobil di harga 7000-1300.
 
 Untuk mengetahui hubungan data kategori dengan harga mobil maka akan ditampilkan visualisasi datanya.
@@ -67,6 +68,7 @@ Untuk mengetahui hubungan data kategori dengan harga mobil maka akan ditampilkan
 Dari gambar diatas terlihat bahwa harga cenderung mirip pada semua jenis model, maka dianggap model berpengaruh kecil terhadap harga.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1bH6RThA4tQJDK23TQWVQ4qjoOw0ntd7G)
+
 Dari gambar diatas terlihat bahwa harga cenderung mirip pada semua jenis bahan bakar, maka _fuelType_ dianggap memiliki pengaruh kecil terhadap harga.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1hctNpjBMXuRoxvtzVVXLOHAG-3e5kye2)
@@ -88,6 +90,7 @@ Sebelum data diproses, maka dilakukan terkebih dahulu persiapan agar keluaran ya
 - Langkah pertama adalah mengubah data kategori menjadi data numerik karena algoritma hanya bisa memproses data numerik. Data yang diubah adalah _transmission_ dan _fuel type_. Disini kami menggunakan fungsi _OneHotEncoder_ yang disediakan oleh _library scikit-learn_.
 - Langkah kedua adalah membagi data menjadi data latih dan data uji. Persentasenya adalah 90% data latih dan 10% data uji.
 - Langkah _preprocessing_ selanjutnya adalah mengubah skala data agar memiliki performa yang lebih baik menggunakan fungsi _StandarScaler_ pada _library scikit-learn_.
+  
 ![iqryear](https://drive.google.com/uc?export=view&id=1UKvUKSUg3rfExz-JGZkzr5NbnkMrtztI)
 
 Dapat dilihat pada gambar diatas bahwa _mean_ menjadi 0 dan _std_ menjadi 1.
@@ -102,7 +105,7 @@ KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain deng
 
 KNN bekerja pada data mobil bekas dengan menentukan terlebih dahulu secara acak banyak titik _neighbor_(k) pada sumbu x yaitu input model. Kemudian berdasarkan titik tersebut akan dihitung jarak pada titik-titik di sekitarnya. Jarak terdekat yang memiliki kesalahan terkecil yang akan ditentukan sebagai titik dalam model yang akan memprediksi data _input_ yang baru.
 
-Pada algoritma KNN menggunakan banyak input(n neighbors) 100
+Pada algoritma KNN di percobaan ini menggunakan banyak _input(n neighbors)_ = 100.
 
 ### _Model Development_ dengan _Random Forest_
 _Random forest_ merupakan salah satu model _machine learning_ yang termasuk ke dalam kategori _ensemble (group) learning_. Apa itu model _ensemble_? Sederhananya, ia merupakan model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama. Ide dibalik model _ensemble_ adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Pada model _ensemble_, setiap model harus membuat prediksi secara independen. Kemudian, prediksi dari setiap model _ensemble_ ini digabungkan untuk membuat prediksi akhir.
@@ -111,12 +114,14 @@ _Random forest_ merupakan salah satu model _machine learning_ yang termasuk ke d
  
  _Random forest_ bekerja pada data mobil bekas dengan membagi secara acak dan fitur berdasarkan banyak pohon yang ditentukan. Hasil prediksi setiap pohon _decision tree_ akan dicari rata-ratanya kemudian itulah yang menjadi hasil prediksi _random forest_.
  
+ Pada algoritma _Random Forest_ di percobaan ini menggunakan parameter _n estimators_=55,_max depth_=16, dan _random state_=55.
+ 
  ### _Model Development_ dengan _Boosting Algorithm_
  Algoritma yang menggunakan teknik _boosting_ bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. 
  
  Seperti namanya, _boosting_, algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi. Caranya adalah dengan menggabungkan beberapa model sederhana dan dianggap lemah (_weak learners_) sehingga membentuk suatu model yang kuat (_strong ensemble learner_). Algoritma _boosting_ muncul dari gagasan mengenai apakah algoritma yang sederhana seperti _linear regression_ dan _decision tree_ dapat dimodifikasi untuk dapat meningkatkan performa. 
  
- _Boosting_ akan bekerja pada data mobil bekas berdasarkan _learning rate_ dan _random state_ yang ditetapkan.
+ _Boosting_ akan bekerja pada data mobil bekas berdasarkan _learning rate_ dan _random state_ yang ditetapkan. _Boosting_ pada percobaan ini menggunakan parameter _learning rate_=0.02 dan _random state_=30.
 
 ## _Evaluation_
 Metrik yang akan digunakan pada prediksi ini adalah MSE atau _Mean Squared Error_ yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
