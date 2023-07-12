@@ -15,7 +15,7 @@ Tujuan utama dari aplikasi ini adalah untuk memprediksi harga mobil bekas berdas
 - _Showroom_ kesulitan menetapkan standar harga ketika ingin menjual mobil bekas
 - Belum diketahui variabel-variabel yang mempengaruhi harga mobil bekas
 
-### Goals
+### _Goals_
 - Dengan adanya model yang dihasilkan memungkinkan untuk digunakan dalam memprediksi harga mobil yang bisa dijadikan landasan dalam proses tawar menawar, bisa digunakan _showroom_ ketika ingin membeli atau menjual kembali.
 - Akan didapatkan variabel yang paling berpengaruh dalam penetapan harga mobil bekas.
 
