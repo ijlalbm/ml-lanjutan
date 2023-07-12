@@ -42,15 +42,19 @@ Untuk lebih memahami dataset, maka ditampilkan ringkasan data dengan fungsi ```.
 _Outliers_ adalah sampel yang nilainya sangat jauh dari cakupan umum data utama. Ia adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari data hasil pengamatan lainnya. Untuk menghilangkan _outliers_ pada data mobil bekas, kami menggunakan _boxplot_ untuk menampilkan data _outliers_ kemudian menghapus data tersebut menggunakan teknik IQR. IQR=Q3-Q2.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=10yJYVhdZL1uPv64sCsN-InmqyeeezSBV)
+
 Pada gambar diatas terlihat bahwa ada data _outliers_ pada variabel tahun (ditandai dengan titik hitam), menyimpang dari data lainnya yaitu dari _boxplot_.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1gmlWdH0N3JuC-4a9jVwxA41RSydkYtPZ)
+
 Pada variabel _engineSize_ juga terdapat data _outliers_. Untuk mengatasi hal ini maka akan dilakukan penghapusan pada data _outliers_ tersebut.
 Langkah selanjutnya adalah menampilkan ringkasan dari data kategori.
 ![iqryear](https://drive.google.com/uc?export=view&id=15Q2Lp4KePmD1RD8H-vddGRsBejidNJvK)
+
 Pada Gambar diatas terlihat bahwa model Aygo dan yaris merupakan 60% dari total data.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1w1OlYib3o-2EFfofPbcxg-5vtwAQH4NA)
+
 Rata-rata transmisi pada data adalah _manual_ dan _automatic_.
 
 Selanjutnya adalah menampilkan ringkasan data numerik.
@@ -59,19 +63,23 @@ Pada variabel _price_ dapat dilihat bahwa mayoritas harga mobil di harga 7000-13
 
 Untuk mengetahui hubungan data kategori dengan harga mobil maka akan ditampilkan visualisasi datanya.
 ![iqryear](https://drive.google.com/uc?export=view&id=1es5HN3UFV-sU4KOfu9AssooTQlwbCjb0)
+
 Dari gambar diatas terlihat bahwa harga cenderung mirip pada semua jenis model, maka dianggap model berpengaruh kecil terhadap harga.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1bH6RThA4tQJDK23TQWVQ4qjoOw0ntd7G)
 Dari gambar diatas terlihat bahwa harga cenderung mirip pada semua jenis bahan bakar, maka _fuelType_ dianggap memiliki pengaruh kecil terhadap harga.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1hctNpjBMXuRoxvtzVVXLOHAG-3e5kye2)
+
 Dari gambar diatas terlihat bahwa harga cenderung mirip pada semua jenis _transmission_, maka dianggap memiliki pengaruh kecil terhadap harga.
 
 Untuk mengetahui korelasi antara variabel harga dengan variabel lain, maka digunakan fungsi _pairplot_ pada _library seaborns_.
 ![iqryear](https://drive.google.com/uc?export=view&id=1tGJZiqOG_fbv0VbEL7ZvjO_MsuQnj2u1)
+
 Terlihat bahwa variabel _year_ memiliki korelasi positif terhadap harga. Semakin baru mobil tersebut, maka harga juga semakin mahal. Variabel _mileage_ juga memiliki pola,dimana berkorelasi negatif, semakin besar jarak tempuhnya, maka harga juga semakin murah. Variabel _engineSize_ juga memiliki korelasi terhadap harga, semakin besar _engine size_ nya, maka harga juga semakin mahal. Selanjutnya akan ditampilkan nilai korelasi setiap variabel terhadap harga.
 
 ![iqryear](https://drive.google.com/uc?export=view&id=1d8ZX9j1vRrTJ5jqGTfSGzFONS5OtclsB)
+
 Dapat dilihat pada gambar bahwa variabel _year_ dan _engineSize_ memiliki korelasi yang cukup tinggi terhadap price, maka variabel tersebut akan digunakan sebagai input pada model.
 
 ## _Data Preparation_
@@ -81,6 +89,7 @@ Sebelum data diproses, maka dilakukan terkebih dahulu persiapan agar keluaran ya
 - Langkah kedua adalah membagi data menjadi data latih dan data uji. Persentasenya adalah 90% data latih dan 10% data uji.
 - Langkah _preprocessing_ selanjutnya adalah mengubah skala data agar memiliki performa yang lebih baik menggunakan fungsi _StandarScaler_ pada _library scikit-learn_.
 ![iqryear](https://drive.google.com/uc?export=view&id=1UKvUKSUg3rfExz-JGZkzr5NbnkMrtztI)
+
 Dapat dilihat pada gambar diatas bahwa _mean_ menjadi 0 dan _std_ menjadi 1.
 
 ## _Modeling_
